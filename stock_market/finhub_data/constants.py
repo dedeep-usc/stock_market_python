@@ -1,0 +1,5 @@
+FINHUB_COMPANY_INFO_URL = "/api/v1/stock/profile2?symbol={}&token={}"
+FINHUB_COMPANY_QUOTE_URL = "/api/v1/quote?symbol={}&token={}"
+FINHUB_COMPANY_RECOMMENDATION_URL = "/api/v1/stock/recommendation?symbol={}&token={}"
+FINHUB_COMPANY_CHART_URL = "/api/v1/stock/candle?symbol={}&resolution=D&from={}&to={}&token={}"
+FINHUB_COMPANY_NEWS_URL = "/api/v1/company-news?symbol={}&from={}&to={}&token={}"
