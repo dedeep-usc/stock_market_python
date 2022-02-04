@@ -29,7 +29,7 @@ def SkelRes():
                 logging.exception(e)
                 raise MyException(traceback.format_exc())
 
-            code = result.get("_code", 200)
+            code = result.get("_code", 200) if type(result) == dict else 200
 
             if "_code" in result:
                 result.pop("_code")
