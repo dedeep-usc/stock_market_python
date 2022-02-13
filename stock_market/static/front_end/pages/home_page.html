@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock market data</title>
+    <link rel="stylesheet" href="/static/front_end/css/stock_market.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Roboto:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <script type="text/javascript">
+        function remove_error(){
+            console.log("olaaaa");
+        }
+    </script>
+
+    <div class="main_div" id="main_content_div">
+        <div class="search_text_div">
+            Stock Search
+        </div>
+        <div class="search_box_div">
+            <button id="search_symbol">
+                <img src="/static/imgs/stock_market/search-solid.svg"/>
+            </button>
+            <input id="search_box" class="search_ip" type="text" placeholder="Enter Stock Sticker Symbol"></input>
+            <button id="x_mark">
+                <img src="/static/imgs/stock_market/times-solid.svg"/>
+            </button>
+        </div>
+
+        <div class="details_tab" id="content_div">
+            <div class="information_tab">
+                <button class="tab_buttons" id="company_button">
+                    Company
+                </button>
+                <button class="tab_buttons" id="stock_summary_button">
+                    Stock Summary
+                </button>
+                <button class="tab_buttons" id="charts_button">
+                    Charts
+                </button>
+                <button class="tab_buttons" id="news_button">
+                    Latest News
+                </button>
+            </div>
+            <div class="tab_contents" id="company_tab">
+                <div id="company_logo_div">
+                    <div id="company_logo">
+                    </div>
+                </div>
+                <div class="company_tab_divs">
+                    <div class="company_tab_left_div">
+                        <div class="company_tab_key first_row">Company Name</div>
+                        <div class="company_tab_key">Stock Ticker Symbol</div>
+                        <div class="company_tab_key">Stock Exchange Code</div>
+                        <div class="company_tab_key">Company IPO Date</div>
+                        <div class="company_tab_key">Category</div>
+                    </div>
+                    <div class="company_tab_right_div">
+                        <div class="company_tab_value first_row" id="company_tab_name"></div>
+                        <div class="company_tab_value" id="company_tab_stock_symbol"></div>
+                        <div class="company_tab_value" id="company_tab_stock_exchange_code"></div>
+                        <div class="company_tab_value" id="company_tab_ipo_date"></div>
+                        <div class="company_tab_value" id="company_tab_category"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab_contents" id="stock_summary_tab">
+                <div class="stock_summary_tab_divs">
+                    <div class="stock_summary_key_val_div">
+                        <div class="stock_summary_left_div">
+                            <div class="stock_summary_tab_key first_row">Stock Ticker Symbol</div>
+                            <div class="stock_summary_tab_key">Trading Day</div>
+                            <div class="stock_summary_tab_key">Previous Closing Price</div>
+                            <div class="stock_summary_tab_key">Opening Price</div>
+                            <div class="stock_summary_tab_key">High Price</div>
+                            <div class="stock_summary_tab_key">Low Price</div>
+                            <div class="stock_summary_tab_key">Change</div>
+                            <div class="stock_summary_tab_key">Change Percent</div>
+                        </div>
+                        <div class="stock_summary_right_div">
+                            <div class="stock_summary_tab_value first_row" id="ss_tab_stock_ticker_symbol">TSLA</div>
+                            <div class="stock_summary_tab_value" id="ss_tab_trading_day">21 January, 2022</div>
+                            <div class="stock_summary_tab_value" id="ss_tab_pcp">996.27</div>
+                            <div class="stock_summary_tab_value" id="ss_tab_op">996.34</div>
+                            <div class="stock_summary_tab_value" id="ss_tab_hp">1004.55</div>
+                            <div class="stock_summary_tab_value" id="ss_tab_lp">940.5</div>
+                            <div class="stock_summary_tab_value movement_symbol_div" id="ss_tab_change"><div id="ss_tab_change_num">-52.37</div><div class="movement_symbol"></div></div>
+                            <div class="stock_summary_tab_value movement_symbol_div" id="ss_tab_change_perc"><div id="ss_tab_change_perc_num">-5.2566</div><div class="movement_symbol"></div></div>
+                        </div>
+                    </div>
+                    <div class="recommendation_numbers">
+                        <div class="strong_sell">
+                            Strong <br>
+                            Sell
+                        </div>
+                        <div class="recom_numbers" id="ss_number">
+                            4
+                        </div>
+                        <div class="recom_numbers"id="s_number">
+                            6
+                        </div>
+                        <div class="recom_numbers"id="h_number">
+                            15
+                        </div>
+                        <div class="recom_numbers"id="b_number">
+                            9
+                        </div>
+                        <div class="recom_numbers"id="sb_number">
+                            120
+                        </div>
+                        <div class="strong_buy">
+                            Strong <br>
+                            Buy
+                        </div>
+                    </div>
+                    <div class="recommendation_text">
+                        Recommendation Trends
+                    </div>
+                </div>
+            </div>
+            <div class="tab_contents" id="charts_tab">
+                <div id="highcharts_tab">
+                </div>
+            </div>
+            <div class="tab_contents" id="news_tab">
+                <div class="individual_news_tabs">
+                    <div class="news_image" id="news_image1">
+                    </div>
+                    <div class="news_content">
+                        <div class="news_headline">
+                            1 Growth Stock's Dominant Grip Just Got Stronger
+                        </div>
+                        <div class="news_date">
+                            11 February, 2022
+                        </div>
+                        <div class="news_link">
+                            <a href="https://finnhub.io/api/news?id=3392078095e626171238b40bccf2d2a8e391a247dc281cbd842d5e15df09056f">See Original Post</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="individual_news_tabs">
+                    <div class="news_image">
+                    </div>
+                    <div class="news_content">
+                        <div class="news_headline">
+                            1 Growth Stock's Dominant Grip Just Got Stronger
+                        </div>
+                        <div class="news_date">
+                            11 February, 2022
+                        </div>
+                        <div class="news_link">
+                            <a href="" target="_blank">See Original Post</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="individual_news_tabs">
+                    <div class="news_image">
+                    </div>
+                    <div class="news_content">
+                        <div class="news_headline">
+                            1 Growth Stock's Dominant Grip Just Got Stronger
+                        </div>
+                        <div class="news_date">
+                            11 February, 2022
+                        </div>
+                        <div class="news_link">
+                            <a href="" target="_blank">See Original Post</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="individual_news_tabs">
+                    <div class="news_image">
+                    </div>
+                    <div class="news_content">
+                        <div class="news_headline">
+                            1 Growth Stock's Dominant Grip Just Got Stronger
+                        </div>
+                        <div class="news_date">
+                            11 February, 2022
+                        </div>
+                        <div class="news_link">
+                            <a href="" target="_blank">See Original Post</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="individual_news_tabs">
+                    <div class="news_image">
+                    </div>
+                    <div class="news_content">
+                        <div class="news_headline">
+                            1 Growth Stock's Dominant Grip Just Got Stronger
+                        </div>
+                        <div class="news_date">
+                            11 February, 2022
+                        </div>
+                        <div class="news_link">
+                            <a href="" target="_blank">See Original Post</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="error_msg_div" class="error_msg">
+            Error: No record has been found, please enter a valid symbol.
+        </div>
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/data.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+
+    <script src="/static/front_end/js_new/constants.js"></script>
+    <script src="/static/front_end/js_new/utils.js"></script>
+    <script src="/static/front_end/js_new/events_util.js"></script>
+    <script src="/static/front_end/js_new/main.js"></script>
+    
+</body>
+</html>
