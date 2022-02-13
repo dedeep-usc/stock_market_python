@@ -11,6 +11,6 @@ import * as events_util from './events_util.js'
 //     console.log("On click working my boy")
 // }
 
-console.log("Callign add_events from events_util")
+console.log("Calling add_events from events_util")
 events_util.add_events()
 console.log("Finished calling add_events from events_util")

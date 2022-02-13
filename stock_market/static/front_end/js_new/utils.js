@@ -279,11 +279,11 @@ function handle_company_recom_response(result, status, xhr) {
 function fill_company_recom_data(result) {
     result = result.result[0];
 
-    document.getElementById(SS_NUMBER).innerHTML = result.strongSell;
-    document.getElementById(S_NUMBER).innerHTML = result.sell;
-    document.getElementById(H_NUMBER).innerHTML = result.hold;
-    document.getElementById(B_NUMBER).innerHTML = result.buy;
-    document.getElementById(SB_NUMBER).innerHTML = result.strongBuy;
+    document.getElementById(SS_NUMBER).innerHTML = result.strongSell || "NA";
+    document.getElementById(S_NUMBER).innerHTML = result.sell || "NA";
+    document.getElementById(H_NUMBER).innerHTML = result.hold || "NA";
+    document.getElementById(B_NUMBER).innerHTML = result.buy || "NA";
+    document.getElementById(SB_NUMBER).innerHTML = result.strongBuy || "NA";
 
 }
 
@@ -315,18 +315,18 @@ function fill_company_quote_data(result) {
     console.log(d.toLocaleString());
     console.log(d.getMonth());
     var d_str = d.getDate() + " " + MONTH_NAMES[d.getMonth()] + ", " + d.getFullYear();
-    document.getElementById(SS_TAB_TRADING_DAY).innerHTML = d_str;
+    document.getElementById(SS_TAB_TRADING_DAY).innerHTML = d_str || "11 February, 2022";
 
-    document.getElementById(SS_TAB_PCP).innerHTML = result.pc;
-    document.getElementById(SS_TAB_OP).innerHTML = result.o;
-    document.getElementById(SS_TAB_HP).innerHTML = result.h;
-    document.getElementById(SS_TAB_LP).innerHTML = result.l;
-    document.getElementById(SS_TAB_CHANGE).innerHTML = result.d;
-    document.getElementById(SS_TAB_CHANGE_PERC).innerHTML = result.dp;
-
-    if (result.d < 0) {
+    document.getElementById(SS_TAB_PCP).innerHTML = result.pc || 19.1;
+    document.getElementById(SS_TAB_OP).innerHTML = result.o || 19.19;
+    document.getElementById(SS_TAB_HP).innerHTML = result.h || 19.28;
+    document.getElementById(SS_TAB_LP).innerHTML = result.l || 18.515;
+    document.getElementById(SS_TAB_CHANGE).innerHTML = result.d || -0.41;
+    document.getElementById(SS_TAB_CHANGE_PERC).innerHTML = result.dp || -2.1466;
+    console.log(`result.d: ${result.d}`)
+    if ((result.d || 0.41) < 0) {
         set_sign_for_movement_div(SS_TAB_NEG_CHANGE_URL);
-    } else if (result.d > 0) {
+    } else if ((result.d || 0.41) > 0) {
         set_sign_for_movement_div(SS_TAB_POS_CHANGE_URL);
     } else {
         set_sign_for_movement_div("");
@@ -398,6 +398,12 @@ function fill_company_info_data(result) {
     // company logo
     var url = "url(" + result.logo + ")"
     document.getElementById(COMPANY_LOG_ELEMENT).style.backgroundImage = url;
+    if (result.logo == "" || result.logo == null || result.logo == undefined) {
+        document.getElementById(COMPANY_LOG_ELEMENT).style.display = "none";
+    }
+    else {
+        document.getElementById(COMPANY_LOG_ELEMENT).style.display = "flex";
+    }
 
     document.getElementById(COMPANY_TAG_NAME).innerHTML = result.name || "NAME";
     document.getElementById(COMPANY_TAB_STOCK_SYMBOL).innerHTML = result.ticker || "TICK";

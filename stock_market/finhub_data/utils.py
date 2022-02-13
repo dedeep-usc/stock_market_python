@@ -159,7 +159,7 @@ def get_company_chart_data(company):
     finhub_data["date_price"] = date_price
     finhub_data["date_volume"] = date_volume
     finhub_data["company"] = company
-    finhub_data["date"] = datetime.datetime.fromtimestamp(finhub_data["t"][-1]).strftime("%Y-%m-%d")
+    finhub_data["date"] = datetime.datetime.fromtimestamp(finhub_data["t"][0]).strftime("%Y-%m-%d")
     return finhub_data
 
 

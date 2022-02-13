@@ -9,7 +9,7 @@ body {
     padding-top: 30px;
     text-align: center;
     font-family: 'Open Sans', sans-serif;
-    padding-bottom: 50px;
+    padding-bottom: 200px;
 }
 
 .search_text_div {
@@ -177,7 +177,7 @@ body {
 .company_tab_key {
     text-align: right;
     padding-right: 5px;
-    padding-left: 65px;
+    padding-left: 102px;
     padding-top: 3px;
     padding-bottom: 3px;
     border-bottom: 0.5px solid #E5E4E2;
