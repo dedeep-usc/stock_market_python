@@ -6,10 +6,11 @@ from stock_market.finhub_data.utils import get_company_info, get_company_quote, 
 from stock_market.skel.skel_res import SkelRes
 
 
-def error(code, msg):
+def error(code, msg, company="NA"):
     return {
         "_code": code,
-        "message": msg
+        "message": msg,
+        "company": company
     }
 
 
@@ -23,7 +24,7 @@ def get_company_info_api():
     company = company.upper()
     result = get_company_info(company)
     if "error" in result:
-        return error(500, result.get("error"))
+        return error(500, result.get("error"), company=company)
 
     return result
 
@@ -38,7 +39,7 @@ def get_company_quote_api():
     company = company.upper()
     result = get_company_quote(company)
     if "error" in result:
-        return error(500, result.get("error"))
+        return error(500, result.get("error"), company=company)
 
     return result
 
@@ -53,7 +54,7 @@ def get_company_recommendation_api():
     company = company.upper()
     result = get_company_recommendation(company)
     if "error" in result:
-        return error(500, result.get("error"))
+        return error(500, result.get("error"), company=company)
 
     return result
 
@@ -68,7 +69,7 @@ def get_company_chart_api():
     company = company.upper()
     result = get_company_chart_data(company)
     if "error" in result:
-        return error(500, result.get("error"))
+        return error(500, result.get("error"), company=company)
 
     return result
 
@@ -83,7 +84,7 @@ def get_company_news_api():
     company = company.upper()
     result = get_company_news(company)
     if "error" in result:
-        return error(500, result.get("error"))
+        return error(500, result.get("error"), company=company)
 
     return result
 
@@ -98,7 +99,7 @@ def get_company_all_data_api():
     company = company.upper()
     result = get_company_all_data(company)
     if "error" in result:
-        return error(500, result.get("error"))
+        return error(500, result.get("error"), company=company)
 
     return result
 

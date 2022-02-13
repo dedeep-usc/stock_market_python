@@ -153,6 +153,13 @@ def get_company_chart_data(company):
         return {
             "error": f"Finhub didn't return any data for the company: {company}. Please ensure that the company symbol is right."
         }
+
+    date_price = [[finhub_data["t"][i]*1000, finhub_data["c"][i]] for i in range(len(finhub_data["t"]))]
+    date_volume = [[finhub_data["t"][i]*1000, finhub_data["v"][i]] for i in range(len(finhub_data["t"]))]
+    finhub_data["date_price"] = date_price
+    finhub_data["date_volume"] = date_volume
+    finhub_data["company"] = company
+    finhub_data["date"] = datetime.datetime.fromtimestamp(finhub_data["t"][0]).strftime("%Y-%m-%d")
     return finhub_data
 
 

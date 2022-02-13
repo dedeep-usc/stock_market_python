@@ -1,7 +1,8 @@
-from flask import Flask, jsonify
+import logging
+
+from flask import Flask, jsonify, send_from_directory
 
 app = Flask(__name__, static_folder="stock_market/static", static_url_path="/static")
-
 
 from app_configuration import configure_application
 configure_application()
@@ -29,3 +30,4 @@ def internal_server_error(e):
         "message": ""
     }
     return jsonify(response), 500
+

@@ -2,10 +2,11 @@ from main import app
 
 import stock_market.test as test
 import stock_market.finhub_data as finhub_data
+import stock_market.front_end as front_end
 
 api_routes = []
 
-api_routes += test.api_routes + finhub_data.api_routes
+api_routes += test.api_routes + finhub_data.api_routes + front_end.api_routes
 
 
 def configure_app_routes():

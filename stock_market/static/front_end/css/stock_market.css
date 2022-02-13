@@ -1,0 +1,360 @@
+body {
+    width: 1239px;
+}
+
+.main_div {
+    background-image: url("/static/imgs/stock_market/back.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 250px;
+    padding-top: 30px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    padding-bottom: 200px;
+}
+
+.search_text_div {
+    text-align: center;
+    font-size: 22px;
+}
+
+.search_box_div {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.search_ip {
+    width: 600px;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+    align-items: center;
+    border: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Open Sans', sans-serif;
+    box-shadow: 1px 1px 1px 0px #dcdcdc;
+    background: #fff;
+    color:  #696969;
+}
+
+
+#search_symbol {
+    /*width: 30px;*/
+    border: 0;
+    padding-right: 13px;
+    padding-left: 13px;
+    background-color: #fff;
+    box-shadow: 1px 1px 1px 0px #dcdcdc;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+}
+
+#search_symbol img {
+    height: 12px;
+    width: 12px;
+    padding-top: 4px;
+    opacity: 0.3;
+}
+
+#search_symbol img:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+#x_mark {
+    background-color: #fff;
+    background-repeat: no-repeat;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 0;
+    border-left-width: 1px;
+    box-shadow: 1px 1px 1px 0px #dcdcdc;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    padding-right: 13px;
+    padding-left: 13px;
+    padding-top: 4px;
+    align-items: center;
+}
+
+#x_mark img {
+    height: 13px;
+    width: 13px;
+    opacity: 0.3;
+}
+
+#x_mark img:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.details_tab {
+    width: 1100px;
+    margin-left: 69.5px;
+    margin-right: 69.5px;
+}
+
+.information_tab {
+    display: flex;
+    justify-content: left;
+    margin-top: 150px;
+    width: 1100px;
+    background-color: #f1f1f1;
+}
+
+.tab_buttons {
+    padding-top: 13px;
+    padding-bottom: 13px;
+    padding-left: 13px;
+    padding-right: 13px;
+    color:  #696969;
+    border: 0;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #f1f1f1;
+}
+
+.tab_buttons:hover {
+    background-color: #dcdcdc
+    ;
+}
+
+.tab_buttons.active {
+    background-color: #ccc;
+}
+
+.tab_contents {
+    display: none;
+}
+
+#content_div {
+    display: none;
+}
+
+.error_msg {
+    display: none;
+    background-color: #f1f1f1;
+    text-align: center;
+    width: 600px;
+    margin-left: 319.5px;
+    margin-right: 319.5px;
+    margin-top: 200px;
+    border-radius: 7px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.tab_contents {
+    display: flex;
+    justify-content: center;
+}
+
+#company_logo_div {
+    display: flex;
+    justify-content: center;
+}
+
+.company_tab_divs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+.company_tab_left_div {
+    display: flex;
+    justify-content: right;
+    flex-direction: column;
+}
+
+.company_tab_right_div {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+}
+
+.company_tab_key {
+    text-align: right;
+    padding-right: 5px;
+    padding-left: 102px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-bottom: 0.5px solid #E5E4E2;
+    font-weight: 600;
+}
+
+.company_tab_value {
+    text-align: left;
+    padding-left: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-bottom: 0.5px solid #E5E4E2;
+    padding-right: 30px;
+    color: #696969;
+    /* width: 240px; */
+}
+
+.first_row {
+    border-top: 0.5px solid #E5E4E2;
+    margin-top: 14px;
+}
+
+#company_logo {
+    /* background-image: url('https://finnhub.io/api/logo?symbol=TSLA'); */
+    height: 128px;
+    width: 128px;
+    background-repeat: no-repeat;
+    margin-top: 20px;
+    background-size: 128px 128px;
+}
+
+
+.stock_summary_tab_divs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    flex-direction: column;
+}
+
+.stock_summary_key_val_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+.company_tab_left_div {
+    display: flex;
+    justify-content: right;
+    flex-direction: column;
+}
+
+.company_tab_right_div {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+}
+
+.stock_summary_tab_key {
+    text-align: right;
+    border-bottom: 0.5px solid #E5E4E2;
+    font-weight: 600;
+    padding-right: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 10px;
+}
+
+.stock_summary_tab_value {
+    text-align: left;
+    border-bottom: 0.5px solid #E5E4E2;
+    color: #696969;
+    padding-left: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 150px;
+}
+
+.movement_symbol_div {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.movement_symbol {
+    background-image: url("/static/imgs/stock_market/RedArrowDown.png");
+    /* background-repeat: no-repeat; */
+    width: 15px;
+    height: 15px;
+    background-size: cover;
+    margin-left: 3px;
+}
+
+.recommendation_numbers {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.recom_numbers {
+    text-align: center;
+    width: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #fff;
+}
+
+.strong_sell {
+    color: #EA323E;
+}
+
+#ss_number {
+    background-color: #EA323E;
+    margin-left: 10px;
+}
+
+#s_number {
+    background-color: #B25F4A;
+}
+
+#h_number {
+    background-color: #77945C;
+}
+
+#b_number {
+    background-color: #35b662;
+}
+
+#sb_number {
+    /* background-color: #10df77; */
+    margin-right: 10px;
+    background-color: #52FF7F;
+}
+
+.strong_buy {
+    color: #10df77;
+    /* color: #0ad814; */
+}
+
+.recommendation_text {
+    color: #696969;
+    margin-top: 15px;
+    font-size: 17px;
+}
+
+.individual_news_tabs {
+    display: flex;
+    justify-content: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+.news_image {
+    background-repeat: no-repeat;
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+}
+
+.news_content{
+    text-align: left;
+    padding-left: 10px;
+}
+
+.news_headline {
+    font-weight: 600;
+    /* font-size: 15px; */
+}
+
+.news_date { 
+    color:  #696969;
+    font-size: 15px;
+}
+
+.news_link {
+    font-size: 15px;
+}
