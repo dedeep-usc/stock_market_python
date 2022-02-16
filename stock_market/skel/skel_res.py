@@ -36,6 +36,7 @@ def SkelRes():
 
             response_template["code"] = code
             response_template["result"] = result
+            response_template["company"] = request.args.get("company")
 
             response = Response(json.dumps(response_template, default=str))
             response.headers = headers

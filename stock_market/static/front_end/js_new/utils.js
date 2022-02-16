@@ -15,16 +15,17 @@ function searchSymbol() {
     document.getElementById(ERROR_MSG_DIV).style.display = "none"
     
     // set all news tab display to none
-    set_news_tab_display_none();
-    set_charts_tab_display_none();
-    set_stock_summary_tab_divs_none();
+    // set_news_tab_display_none();
+    // set_charts_tab_display_none();
+    // set_stock_summary_tab_divs_none();
+    
     // Company info tab
 
     get_company_info(company_symbol);
-    get_stock_quote(company_symbol);
-    get_company_recommendation(company_symbol);
-    get_company_news(company_symbol);
-    get_stock_candles(company_symbol);
+    // get_stock_quote(company_symbol);
+    // get_company_recommendation(company_symbol);
+    // get_company_news(company_symbol);
+    // get_stock_candles(company_symbol);
 }
 
 function set_stock_summary_tab_divs_none() {
@@ -384,8 +385,25 @@ function handle_company_info_response(result, status, xhr) {
         return
     }
 
+    var company_symbol = result.company
+    console.log("Company info successful. Will be calling other apis async.");
+    get_stock_quote(company_symbol);
+    get_company_recommendation(company_symbol);
+    get_company_news(company_symbol);
+    get_stock_candles(company_symbol);
+
     // Make all buttons and div to correct state
-    handle_search_btn_displays();
+    var content_div_style = document.getElementById(CONTENT_DIV).style.display;
+    console.log(`content_div_style: ${content_div_style}.`);
+    if (content_div_style.includes("block")) {
+        console.log("content div is already visible. Leaving it as it is.");
+    }
+    else {
+        
+        console.log("Content div is hidden. Going to set everything to correct state.");
+        handle_search_btn_displays();
+    }
+    // handle_search_btn_displays();
 
     // Add all data required
     fill_company_info_data(result);
@@ -430,6 +448,7 @@ function ajax_request(url, handler) {
 }
 
 function handle_search_btn_displays() {
+
     // Remove active status from all buttons
     remove_active_status_tag_buttons();
 
