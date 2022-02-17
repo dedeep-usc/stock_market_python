@@ -155,11 +155,25 @@ body {
     justify-content: center;
 }
 
+/* .company_tab_divs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+} */
+
 .company_tab_divs {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 14px;
+    flex-direction: column;
+}
+
+.company_tab_ind_elems {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .company_tab_left_div {
@@ -174,14 +188,19 @@ body {
     flex-direction: column;
 }
 
+.company_tab_ind_elems {
+    border-bottom: 0.5px solid #E5E4E2;
+}
+
 .company_tab_key {
     text-align: right;
     padding-right: 5px;
-    padding-left: 102px;
+    /* padding-left: 102px; */
     padding-top: 3px;
     padding-bottom: 3px;
-    border-bottom: 0.5px solid #E5E4E2;
+    /* border-bottom: 0.5px solid #E5E4E2; */
     font-weight: 600;
+    width: 240px;
 }
 
 .company_tab_value {
@@ -189,10 +208,10 @@ body {
     padding-left: 5px;
     padding-top: 3px;
     padding-bottom: 3px;
-    border-bottom: 0.5px solid #E5E4E2;
-    padding-right: 30px;
+    /* border-bottom: 0.5px solid #E5E4E2; */
+    /* padding-right: 30px; */
     color: #696969;
-    /* width: 240px; */
+    width: 240px;
 }
 
 .first_row {
@@ -216,6 +235,7 @@ body {
     align-items: center;
     font-size: 14px;
     flex-direction: column;
+    
 }
 
 .stock_summary_key_val_div {

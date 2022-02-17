@@ -279,12 +279,11 @@ function handle_company_recom_response(result, status, xhr) {
 
 function fill_company_recom_data(result) {
     result = result.result[0];
-
-    document.getElementById(SS_NUMBER).innerHTML = result.strongSell || "NA";
-    document.getElementById(S_NUMBER).innerHTML = result.sell || "NA";
-    document.getElementById(H_NUMBER).innerHTML = result.hold || "NA";
-    document.getElementById(B_NUMBER).innerHTML = result.buy || "NA";
-    document.getElementById(SB_NUMBER).innerHTML = result.strongBuy || "NA";
+    document.getElementById(SS_NUMBER).innerHTML = (result.strongSell == null || result.strongSell == undefined) ? "NA" : result.strongSell;
+    document.getElementById(S_NUMBER).innerHTML = (result.sell == null || result.sell == undefined) ? "NA" : result.sell;
+    document.getElementById(H_NUMBER).innerHTML = (result.hold == null || result.hold == undefined) ? "NA" : result.hold;
+    document.getElementById(B_NUMBER).innerHTML = (result.buy == null || result.buy == undefined) ? "NA" : result.buy;
+    document.getElementById(SB_NUMBER).innerHTML = (result.strongBuy == null || result.strongBuy == undefined) ? "NA" : result.strongBuy;
 
 }
 
@@ -387,10 +386,13 @@ function handle_company_info_response(result, status, xhr) {
 
     var company_symbol = result.company
     console.log("Company info successful. Will be calling other apis async.");
+    
+    get_stock_candles(company_symbol);
+    get_company_news(company_symbol);
+    
     get_stock_quote(company_symbol);
     get_company_recommendation(company_symbol);
-    get_company_news(company_symbol);
-    get_stock_candles(company_symbol);
+    
 
     // Make all buttons and div to correct state
     var content_div_style = document.getElementById(CONTENT_DIV).style.display;

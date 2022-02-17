@@ -26,12 +26,11 @@ export function searchSymbol() {
     // Company info tab
 
 
-
+    get_stock_candles(company_symbol);
+    get_company_news(company_symbol);
     get_company_info(company_symbol);
     get_stock_quote(company_symbol);
     get_company_recommendation(company_symbol);
-    get_company_news(company_symbol);
-    get_stock_candles(company_symbol);
 }
 
 export function highcharts_build(data){
