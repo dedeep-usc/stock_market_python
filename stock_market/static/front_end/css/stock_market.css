@@ -378,3 +378,7 @@ body {
 .news_link {
     font-size: 15px;
 }
+
+#highcharts_tab {
+    height: 500px;
+}
