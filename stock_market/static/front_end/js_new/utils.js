@@ -317,16 +317,18 @@ function fill_company_quote_data(result) {
     var d_str = d.getDate() + " " + MONTH_NAMES[d.getMonth()] + ", " + d.getFullYear();
     document.getElementById(SS_TAB_TRADING_DAY).innerHTML = d_str || "11 February, 2022";
 
-    document.getElementById(SS_TAB_PCP).innerHTML = result.pc || 19.1;
-    document.getElementById(SS_TAB_OP).innerHTML = result.o || 19.19;
-    document.getElementById(SS_TAB_HP).innerHTML = result.h || 19.28;
-    document.getElementById(SS_TAB_LP).innerHTML = result.l || 18.515;
-    document.getElementById(SS_TAB_CHANGE).innerHTML = result.d || -0.41;
-    document.getElementById(SS_TAB_CHANGE_PERC).innerHTML = result.dp || -2.1466;
+    document.getElementById(SS_TAB_PCP).innerHTML = (result.pc == null || result.pc == undefined) ? "NA" : result.pc;
+    document.getElementById(SS_TAB_OP).innerHTML = (result.o == null || result.o == undefined) ? "NA" : result.o;
+    document.getElementById(SS_TAB_HP).innerHTML = (result.h == null || result.h == undefined) ? "NA" : result.h;
+    document.getElementById(SS_TAB_LP).innerHTML = (result.l == null || result.l == undefined) ? "NA" : result.l;
+    document.getElementById(SS_TAB_CHANGE).innerHTML = (result.d == null || result.d == undefined) ? "NA" : result.d;
+    document.getElementById(SS_TAB_CHANGE_PERC).innerHTML = (result.dp == null || result.dp == undefined) ? "NA" : result.dp;
     console.log(`result.d: ${result.d}`)
-    if ((result.d || 0.41) < 0) {
+
+    var result_d = (result.d == null || result.d == undefined) ? 0 : result.d;
+    if (result_d < 0) {
         set_sign_for_movement_div(SS_TAB_NEG_CHANGE_URL);
-    } else if ((result.d || 0.41) > 0) {
+    } else if (result_d > 0) {
         set_sign_for_movement_div(SS_TAB_POS_CHANGE_URL);
     } else {
         set_sign_for_movement_div("");
