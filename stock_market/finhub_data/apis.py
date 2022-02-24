@@ -53,8 +53,15 @@ def get_company_recommendation_api():
 
     company = company.upper()
     result = get_company_recommendation(company)
-    if "error" in result:
-        return error(500, result.get("error"), company=company)
+    if "error" in result or not result:
+        # return error(500, result.get("error"), company=company)
+        return [{
+            "strongSell": "NA",
+            "sell": "NA",
+            "hold": "NA",
+            "buy": "NA",
+            "strongBuy": "NA"
+        }]
 
     return result
 
