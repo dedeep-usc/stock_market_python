@@ -43,7 +43,7 @@ def get_company_info(company):
         }
 
     if response.status_code != 200:
-        logging.eror(f"Response status code from fihnub not 200. Status code: {response.status_code}")
+        logging.error(f"Response status code from fihnub not 200. Status code: {response.status_code}")
         logging.error(f"Response from finhub: {str(response.text)}")
         return {
             "error": "Status code not 200 from finhub. Please try later."
@@ -73,7 +73,7 @@ def get_company_quote(company):
         }
 
     if response.status_code != 200:
-        logging.eror(f"Response status code from finhub not 200. Status code: {response.status_code}")
+        logging.error(f"Response status code from finhub not 200. Status code: {response.status_code}")
         logging.error(f"Response from finhub: {str(response.text)}")
         return {
             "error": "Status code not 200 from finhub. Please try later."
@@ -99,7 +99,7 @@ def get_company_recommendation(company):
         }
 
     if response.status_code != 200:
-        logging.eror(f"Response status code from finhub not 200. Status code: {response.status_code}")
+        logging.error(f"Response status code from finhub not 200. Status code: {response.status_code}")
         logging.error(f"Response from finhub: {str(response.text)}")
         return {
             "error": "Status code not 200 from finhub. Please try later."
@@ -139,7 +139,7 @@ def get_company_chart_data(company):
         }
 
     if response.status_code != 200:
-        logging.eror(f"Response status code from finhub not 200. Status code: {response.status_code}")
+        logging.error(f"Response status code from finhub not 200. Status code: {response.status_code}")
         logging.error(f"Response from finhub: {str(response.text)}")
         return {
             "error": "Status code not 200 from finhub. Please try later."
@@ -185,7 +185,7 @@ def get_company_news(company):
         }
 
     if response.status_code != 200:
-        logging.eror(f"Response status code from finhub not 200. Status code: {response.status_code}")
+        logging.error(f"Response status code from finhub not 200. Status code: {response.status_code}")
         logging.error(f"Response from finhub: {str(response.text)}")
         return {
             "error": "Status code not 200 from finhub. Please try later."

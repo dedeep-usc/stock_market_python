@@ -1,7 +1,7 @@
 // backend server stuff
 
-// const ENDPOINT='http://0.0.0.0:9080'
-const ENDPOINT="https://stock-marketket-python-331122.appspot.com"
+const ENDPOINT='http://0.0.0.0:9080'
+// const ENDPOINT="https://stock-marketket-python-331122.appspot.com"
 const COMPANY_INFO_API="/api/get/company/info?company="
 const COMPANY_QUOTE_API="/api/get/company/quote?company="
 const COMPANY_RECOMMENDATION_API="/api/get/company/recommendation?company="
