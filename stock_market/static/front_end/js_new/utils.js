@@ -36,11 +36,30 @@ function set_charts_tab_display_none() {
     document.getElementById(HIGHCHARTS_TAB_ID).style.display="none";
 }
 
+function formatDateToString(date){
+    // 01, 02, 03, ... 29, 30, 31
+    var dd = (date.getDate() < 10 ? '0' : '') + date.getDate();
+    // 01, 02, 03, ... 10, 11, 12
+    var MM = ((date.getMonth() + 1) < 10 ? '0' : '') + (date.getMonth() + 1);
+    // 1970, 1971, ... 2015, 2016, ...
+    var yyyy = date.getFullYear();
+ 
+    // create the format you want
+    return (dd + "-" + MM + "-" + yyyy);
+ }
+
 function highcharts_build(result){
     document.getElementById(HIGHCHARTS_TAB_ID).style.display="block";
+    var today_date = new Date();
     Highcharts.stockChart(HIGHCHARTS_TAB_ID, {
         title: {
-            text: `Stock Price ${result.company} ${result.date}`
+            text: `Stock Price ${result.company} ${formatDateToString(today_date)}`
+        },
+
+        plotOptions: {
+            column: {
+                pointPlacement: 'on'
+            }
         },
 
         subtitle:{
