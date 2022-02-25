@@ -38,8 +38,12 @@ body {
     color:  #696969;
 }
 
-.search_ip:focus {
+/* .search_ip:focus {
     outline-width: 0;
+} */
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
 }
 
 #search_symbol {
@@ -297,7 +301,7 @@ body {
 
 .recom_numbers {
     text-align: center;
-    width: 40px;
+    min-width: 40px;
     padding-top: 10px;
     padding-bottom: 10px;
     color: #fff;
